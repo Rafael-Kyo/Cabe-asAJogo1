@@ -5,10 +5,15 @@ using UnityEngine;
 public class Ladrao : MonoBehaviour
 {
     [SerializeField] private float velocidade;
-    // Start is called before the first frame update
+    [SerializeField] private float multiplicador = 5.0f;
+    [SerializeField] private GameObject sangue;
+    [SerializeField] private SegueMause segueMause;
+  
+
     void Start()
     {
-        velocidade = Random.Range(velocidade, velocidade + 10);
+       velocidade = Random.Range(velocidade, velocidade + multiplicador);
+       segueMause = GameObject.Find("Scope").GetComponent<SegueMause>();
     }
 
     // Update is called once per frame
@@ -28,11 +33,8 @@ public class Ladrao : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
-    }
-
-    private void OnM()
-    {
+        segueMause.SomaPontos();
+        Instantiate(sangue, transform.position, Quaternion.identity);       
         Destroy(gameObject);
     }
 }

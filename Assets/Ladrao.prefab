@@ -246,3 +246,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 3
+  multiplicador: 5
+  sangue: {fileID: 3661520731834202407, guid: 81b7a995aac428f4685e1cfef5a5f928, type: 3}
